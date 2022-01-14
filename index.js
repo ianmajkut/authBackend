@@ -1,9 +1,13 @@
 const express = require('express')
 const cors = require('cors')
+const { dbConnection } = require('./db/config')
 require('dotenv').config()
 
 //Crear el servidor express
 const app = express()
+
+//DB
+dbConnection()
 
 //Directorio Público
 app.use(express.static('public'))
